@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.arkxkz.com/"/>
-  <updated>2020-06-16T03:32:08.594Z</updated>
+  <updated>2020-10-04T15:05:15.496Z</updated>
   <id>https://www.arkxkz.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>This is just a testhexo d!</title>
+    <link href="https://www.arkxkz.com/2020/10/04/This-is-just-a-testhexo-d/"/>
+    <id>https://www.arkxkz.com/2020/10/04/This-is-just-a-testhexo-d/</id>
+    <published>2020-10-04T15:03:35.000Z</published>
+    <updated>2020-10-04T15:05:15.496Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>this is test</p><p>this is test</p></blockquote><a id="more"></a><hr><h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>this is a paragraph!!!</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;this is test&lt;/p&gt;
+&lt;p&gt;this is test&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>文件加密的概念和运用</title>
@@ -493,31 +514,6 @@
     
     
       <category term="linux" scheme="https://www.arkxkz.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop分布式搭建ssh设置</title>
-    <link href="https://www.arkxkz.com/2019/07/11/hadoop%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BAssh%E8%AE%BE%E7%BD%AE/"/>
-    <id>https://www.arkxkz.com/2019/07/11/hadoop分布式搭建ssh设置/</id>
-    <published>2019-07-11T15:33:45.000Z</published>
-    <updated>2019-07-11T16:30:38.882Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="天坑配置ssh"><a href="#天坑配置ssh" class="headerlink" title="天坑配置ssh"></a>天坑配置ssh</h1><blockquote><p>hadoop 部署第一步在服务器或者虚拟机配置网络</p></blockquote><blockquote><p>达到要求能够相互免密登录</p></blockquote><a id="more"></a><hr><h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h1><p>网络上的教程 和 书中的指导都没能完全的解决问题，</p><p>没有一个完整的配置hadoop 集群 的最开始步骤 ssh 配置</p><p>常见问题：</p><pre><code>1. 可能因为版本不同导致配置方式失效2. 在配置过程中不完全，只实现了master节点可以无密登录slave节点</code></pre><hr><hr><h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><ul><li>hadoop-3.2.0 *</li></ul><hr><hr><h1 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemtcl status firewalld.service //查看防火墙状态</span><br><span class="line"></span><br><span class="line">systemtcl stop firewalld.service   //关闭防火墙</span><br><span class="line"></span><br><span class="line">systemtcl disable firewalld.service //永远关闭防火墙</span><br></pre></td></tr></table></figure><h2 id="免密钥登录配置"><a href="#免密钥登录配置" class="headerlink" title="免密钥登录配置"></a>免密钥登录配置</h2><p>目的：为了在启动分布式的hdfs时候master节点能直接控制所有slave节点</p><h3 id="master主机的配置"><a href="#master主机的配置" class="headerlink" title="master主机的配置"></a>master主机的配置</h3><p>切换用户为hadoop用户（不要为root）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//在 ~ 目录下 ，生成密钥，自动产生.ssh目录</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"></span><br><span class="line">//将需要的公钥导入</span><br><span class="line"></span><br><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line">//执行同样的骚操作在slaves上</span><br><span class="line"></span><br><span class="line">//将slaves上的公钥复制到master节点</span><br><span class="line"></span><br><span class="line">scp ~/.ssh/id_rsa.pub 用户名@master:~/id_rsa_n.pub </span><br><span class="line"></span><br><span class="line">//在master中导入这些公钥</span><br><span class="line"></span><br><span class="line">cat ~/id_rsa_n &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line">//将这些公钥发送到slaves节点中</span><br><span class="line"></span><br><span class="line">scp ~/.ssh/authorized_keys 用户@slaves:~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//关键一步来了</span><br><span class="line">//一定要将所有的authorized_keys 权限设置为600</span><br><span class="line"></span><br><span class="line">chomod 600 ~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line">//验证</span><br><span class="line"></span><br><span class="line">ssh 主机名</span><br><span class="line"></span><br><span class="line">//如果不需要输入密码则成功</span><br></pre></td></tr></table></figure><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;天坑配置ssh&quot;&gt;&lt;a href=&quot;#天坑配置ssh&quot; class=&quot;headerlink&quot; title=&quot;天坑配置ssh&quot;&gt;&lt;/a&gt;天坑配置ssh&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;hadoop 部署第一步在服务器或者虚拟机配置网络&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;达到要求能够相互免密登录&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="hadoop ssh" scheme="https://www.arkxkz.com/tags/hadoop-ssh/"/>
     
   </entry>
   
