@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.arkxkz.com/2020/10/05/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/</loc>
+    
+    <lastmod>2020-10-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.arkxkz.com/2020/06/16/%E6%96%87%E4%BB%B6%E5%8A%A0%E5%AF%86%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E8%BF%90%E7%94%A8/</loc>
     
     <lastmod>2020-06-16</lastmod>
@@ -172,7 +179,7 @@
 
   <url>
     <loc>https://www.arkxkz.com/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -180,112 +187,119 @@
   
   <url>
     <loc>https://www.arkxkz.com/tags/git/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.arkxkz.com/tags/hexo/</loc>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/LPA/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/LeetCode/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/hadoop-ssh/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/hadoop/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/install/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/linux/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/mapreduce/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/pagerank/</loc>
-    <lastmod>2020-10-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.arkxkz.com/tags/ssh/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.arkxkz.com/tags/ssh/</loc>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/%E6%96%87%E4%BB%B6%E5%8A%A0%E5%AF%86/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/gpg4win/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -294,70 +308,77 @@
   
   <url>
     <loc>https://www.arkxkz.com/categories/git/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.arkxkz.com/categories/hexo/</loc>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/categories/algorithm/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/categories/LeetCode/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/categories/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/categories/hadoop/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/categories/linux/</loc>
-    <lastmod>2020-10-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.arkxkz.com/categories/order/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.arkxkz.com/categories/order/</loc>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.arkxkz.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2020-10-04</lastmod>
+    <lastmod>2020-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

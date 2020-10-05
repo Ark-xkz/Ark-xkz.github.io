@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.arkxkz.com/"/>
-  <updated>2020-06-16T03:32:08.594Z</updated>
+  <updated>2020-10-05T02:34:45.627Z</updated>
   <id>https://www.arkxkz.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo博客迁移</title>
+    <link href="https://www.arkxkz.com/2020/10/05/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/"/>
+    <id>https://www.arkxkz.com/2020/10/05/Hexo博客迁移/</id>
+    <published>2020-10-05T02:28:02.000Z</published>
+    <updated>2020-10-05T02:34:45.627Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>在本地端重新部署</p><p>在远程（github和云服务器）上更改配置</p></blockquote><a id="more"></a><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><img src="https://ftp.bmp.ovh/imgs/2020/10/f7651c7699e8628e.webp" alt></p><p>自己重装电脑或者更换电脑时候，需要将Hexo静态博客迁移到自己的新电脑中，此时需要在新环境下恢复博客。</p><h2 id="必备条件"><a href="#必备条件" class="headerlink" title="必备条件"></a>必备条件</h2><ol><li>将旧环境下的Blog数据打包，存放到新环境的目录下。</li><li>未更改远程部署的博客（github和云服务器）</li></ol><h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><ol><li><p>安装git：使用<code>git -version</code>确认是否安装成功</p><p>配置git个人信息：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 如果第一次安装git</span><br><span class="line">git config --global user.name "your name"</span><br><span class="line">git config --global user.email "your email"</span><br></pre></td></tr></table></figure></li></ol><ol start="2"><li><p>安装node.js：<code>node -v</code>检查安装</p><p>下载网址：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a></p></li><li><p>用国内淘宝的cnpm代替npm：<code>npm install -g cnpm --registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></code></p><p>替换原因：在国内直接使用npm下载，速度很慢。</p><p>检查安装：<code>cnpm -v</code></p></li><li><p>生成SSH密钥：<code>ssh-keygen -t rsa -C “你的GitHub注册邮件地址”</code></p><p>测试：<code>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></code></p><p>生成SSH密钥后，会存放在<code>~/ssh/</code>下。</p></li><li><p>解压Blog数据包，删除无用信息</p><p>只需保留_config.yml，theme/，source/，scaffolds/，package.json，.gitignore 这些项目，删除其他的文件</p></li><li><p>安装Hexo：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 全局安装Hexo</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line"><span class="meta">#</span> hexo验证</span><br><span class="line">hexo -v</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装其它插件</span><br><span class="line"><span class="meta">#</span> 安装hexo -server插件</span><br><span class="line">cnpm install hexo-server --save</span><br><span class="line"><span class="meta">#</span> 安装部署git的插件</span><br><span class="line">cnpm install hexo-deployer-git --save</span><br><span class="line"><span class="meta">#</span> 安装RSS订阅插件</span><br><span class="line">cnpm install hexo-generator-feed --save</span><br><span class="line"><span class="meta">#</span> 安装站点地图插件</span><br><span class="line">cnpm install hexogenerator-sitemap --save</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装关联插件</span><br><span class="line">cnpm install</span><br></pre></td></tr></table></figure></li></ol><h2 id="服务器部署"><a href="#服务器部署" class="headerlink" title="服务器部署"></a>服务器部署</h2><ol><li><p>github：需要在giuhub上增添上自己的SSH公钥。</p><p>位置：我的 - setting - SSH and GPG keys</p><p>添加：将自己本地.ssh目录下的id_rsa.pub内容复制到github</p><p><a href="https://imgchr.com/i/0JoonK" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/05/0JoonK.png" alt="0JoonK.png"></a></p></li><li><p>云服务器：替换原来的git用户密钥。</p><p>位置：~/.ssh/</p><p>替换：将原先的authorized_keys内容替换成自己生成的公钥</p></li></ol><h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ol><li><p>问题描述：使用hexo s 时候报错：Template render error:(unknown path)</p><p>原因1：可能是source/_post下没有渲染的文章</p><p>原因2：可能子啊hexo 3.0后hexo server需要自行安装</p><p>方法1：用hexo n “new article” 创建新的文章，再hexo g之后使用hexo s。</p><p>方法2：安装插件</p><ul><li>检查是否安装插件：<code>cnpm list hexo-generator-feed</code></li><li>安装插件：<code>cnpm install hexo-generator-feed --save</code></li><li>可能存在其它关联插件：<code>cnpm install</code></li></ul></li><li><p>问题描述：Hexo Cannot find module</p><p>方法：hexo的安装出现问题，使用命令<code>cnpm install hexo --no-optional</code></p></li></ol><h2 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h2><blockquote><p><a href="https://ink-bottle.github.io/2019/05/09/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">https://ink-bottle.github.io/2019/05/09/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/</a></p><p><a href="https://blog.csdn.net/baidu_34310405/article/details/105296356" target="_blank" rel="noopener">https://blog.csdn.net/baidu_34310405/article/details/105296356</a></p><p><a href="https://segmentfault.com/a/1190000012907499" target="_blank" rel="noopener">https://segmentfault.com/a/1190000012907499</a></p><p><a href="https://www.jianshu.com/p/196773379a78" target="_blank" rel="noopener">https://www.jianshu.com/p/196773379a78</a></p><p><a href="http://www.west999.com/info/html/wangluobiancheng/Phpbiancheng/20180724/4379814.html" target="_blank" rel="noopener">http://www.west999.com/info/html/wangluobiancheng/Phpbiancheng/20180724/4379814.html</a></p><p><a href="https://segmentfault.com/a/1190000009363890" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009363890</a></p><p><a href="https://segmentfault.com/a/1190000010680022" target="_blank" rel="noopener">https://segmentfault.com/a/1190000010680022</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;在本地端重新部署&lt;/p&gt;
+&lt;p&gt;在远程（github和云服务器）上更改配置&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="https://www.arkxkz.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://www.arkxkz.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>文件加密的概念和运用</title>
@@ -493,31 +518,6 @@
     
     
       <category term="linux" scheme="https://www.arkxkz.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop分布式搭建ssh设置</title>
-    <link href="https://www.arkxkz.com/2019/07/11/hadoop%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BAssh%E8%AE%BE%E7%BD%AE/"/>
-    <id>https://www.arkxkz.com/2019/07/11/hadoop分布式搭建ssh设置/</id>
-    <published>2019-07-11T15:33:45.000Z</published>
-    <updated>2019-07-11T16:30:38.882Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="天坑配置ssh"><a href="#天坑配置ssh" class="headerlink" title="天坑配置ssh"></a>天坑配置ssh</h1><blockquote><p>hadoop 部署第一步在服务器或者虚拟机配置网络</p></blockquote><blockquote><p>达到要求能够相互免密登录</p></blockquote><a id="more"></a><hr><h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h1><p>网络上的教程 和 书中的指导都没能完全的解决问题，</p><p>没有一个完整的配置hadoop 集群 的最开始步骤 ssh 配置</p><p>常见问题：</p><pre><code>1. 可能因为版本不同导致配置方式失效2. 在配置过程中不完全，只实现了master节点可以无密登录slave节点</code></pre><hr><hr><h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><ul><li>hadoop-3.2.0 *</li></ul><hr><hr><h1 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemtcl status firewalld.service //查看防火墙状态</span><br><span class="line"></span><br><span class="line">systemtcl stop firewalld.service   //关闭防火墙</span><br><span class="line"></span><br><span class="line">systemtcl disable firewalld.service //永远关闭防火墙</span><br></pre></td></tr></table></figure><h2 id="免密钥登录配置"><a href="#免密钥登录配置" class="headerlink" title="免密钥登录配置"></a>免密钥登录配置</h2><p>目的：为了在启动分布式的hdfs时候master节点能直接控制所有slave节点</p><h3 id="master主机的配置"><a href="#master主机的配置" class="headerlink" title="master主机的配置"></a>master主机的配置</h3><p>切换用户为hadoop用户（不要为root）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//在 ~ 目录下 ，生成密钥，自动产生.ssh目录</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"></span><br><span class="line">//将需要的公钥导入</span><br><span class="line"></span><br><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line">//执行同样的骚操作在slaves上</span><br><span class="line"></span><br><span class="line">//将slaves上的公钥复制到master节点</span><br><span class="line"></span><br><span class="line">scp ~/.ssh/id_rsa.pub 用户名@master:~/id_rsa_n.pub </span><br><span class="line"></span><br><span class="line">//在master中导入这些公钥</span><br><span class="line"></span><br><span class="line">cat ~/id_rsa_n &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line">//将这些公钥发送到slaves节点中</span><br><span class="line"></span><br><span class="line">scp ~/.ssh/authorized_keys 用户@slaves:~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//关键一步来了</span><br><span class="line">//一定要将所有的authorized_keys 权限设置为600</span><br><span class="line"></span><br><span class="line">chomod 600 ~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line">//验证</span><br><span class="line"></span><br><span class="line">ssh 主机名</span><br><span class="line"></span><br><span class="line">//如果不需要输入密码则成功</span><br></pre></td></tr></table></figure><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;天坑配置ssh&quot;&gt;&lt;a href=&quot;#天坑配置ssh&quot; class=&quot;headerlink&quot; title=&quot;天坑配置ssh&quot;&gt;&lt;/a&gt;天坑配置ssh&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;hadoop 部署第一步在服务器或者虚拟机配置网络&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;达到要求能够相互免密登录&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="hadoop ssh" scheme="https://www.arkxkz.com/tags/hadoop-ssh/"/>
     
   </entry>
   

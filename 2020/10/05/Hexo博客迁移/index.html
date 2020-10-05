@@ -6,27 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://www.arkxkz.com">
-  <title>LPA算法和实现 | xkz的博客</title>
+  <title>Hexo博客迁移 | xkz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Label Propagation 算法 的解析 LPA算法在mapreduce中划分人物社区的应用">
-<meta name="keywords" content="LPA">
+  <meta name="description" content="在本地端重新部署 在远程（github和云服务器）上更改配置">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LPA算法和实现">
-<meta property="og:url" content="https://www.arkxkz.com/2019/07/24/LPA算法和实现/index.html">
+<meta property="og:title" content="Hexo博客迁移">
+<meta property="og:url" content="https://www.arkxkz.com/2020/10/05/Hexo博客迁移/index.html">
 <meta property="og:site_name" content="xkz的博客">
-<meta property="og:description" content="Label Propagation 算法 的解析 LPA算法在mapreduce中划分人物社区的应用">
+<meta property="og:description" content="在本地端重新部署 在远程（github和云服务器）上更改配置">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007DFXDhgy1g5axtkawalj30eb0h20xf.jpg">
-<meta property="og:image" content="https://tva4.sinaimg.cn/large/007DFXDhgy1g5ay5kccn9j30lx04fgmj.jpg">
-<meta property="og:image" content="https://tva3.sinaimg.cn/large/007DFXDhgy1g5ayfs7u0ij30ei01rglo.jpg">
-<meta property="og:image" content="https://tva3.sinaimg.cn/large/007DFXDhgy1g5aygo6am8j30iu01xdg2.jpg">
-<meta property="og:image" content="https://tva2.sinaimg.cn/large/007DFXDhgy1g5aykkzvsrj30iv05476u.jpg">
-<meta property="og:image" content="https://tva2.sinaimg.cn/large/007DFXDhgy1g5ayss6u79j30de03zglh.jpg">
-<meta property="og:updated_time" content="2019-07-24T07:53:46.524Z">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2020/10/f7651c7699e8628e.webp">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/05/0JoonK.png">
+<meta property="og:updated_time" content="2020-10-05T02:34:45.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LPA算法和实现">
-<meta name="twitter:description" content="Label Propagation 算法 的解析 LPA算法在mapreduce中划分人物社区的应用">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007DFXDhgy1g5axtkawalj30eb0h20xf.jpg">
+<meta name="twitter:title" content="Hexo博客迁移">
+<meta name="twitter:description" content="在本地端重新部署 在远程（github和云服务器）上更改配置">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2020/10/f7651c7699e8628e.webp">
   
     <link rel="alternative" href="/atom.xml" title="xkz的博客" type="application/atom+xml">
   
@@ -179,20 +175,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LPA算法和实现" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hexo博客迁移" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LPA算法和实现
+      Hexo博客迁移
     </h1>
   
 
         
-        <a href="/2019/07/24/LPA算法和实现/" class="archive-article-date">
-  	<time datetime="2019-07-24T07:52:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
+        <a href="/2020/10/05/Hexo博客迁移/" class="archive-article-date">
+  	<time datetime="2020-10-05T02:28:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-05</time>
 </a>
         
       </header>
@@ -202,69 +198,83 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Label Propagation 算法 的解析</p>
-<p>LPA算法在mapreduce中划分人物社区的应用</p>
+<p>在本地端重新部署</p>
+<p>在远程（github和云服务器）上更改配置</p>
 </blockquote>
 <a id="more"></a>
 
-<hr>
-<h2 id="Label-Propagation-算法"><a href="#Label-Propagation-算法" class="headerlink" title="Label Propagation 算法"></a>Label Propagation 算法</h2><blockquote>
-<p>基于标签传播的局部社区划分算法</p>
-<p>半监督学习算法</p>
-</blockquote>
-<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>社区：<br></p>
-<p>​    一些节点的集合，这些在同一个社区的节点联系较为紧密，在社区之间的节点联系更为疏松。</p>
-<p>​    如图：<br></p>
-<p><img src="https://tva1.sinaimg.cn/large/007DFXDhgy1g5axtkawalj30eb0h20xf.jpg" alt></p>
-<p><strong>LPA</strong>概念<br></p>
-<p>​    最开始初始化时候，每个节点都有一个自己的标签；开始迭代，当前节点会根据它的相连节点的标签情况来更新自己的节点；迭代多次之后，会有多个节点贴上了相同的标签，形成一个社区。</p>
-<h3 id="LPA原理"><a href="#LPA原理" class="headerlink" title="LPA原理"></a>LPA原理</h3><blockquote>
-<p>假设节点 X，它的相连节点是X1,X2,X3,X4…….，对于每个节点最初初始化标签，标签代表自己所属的社区，节点X根据自己的邻居节点的标签情况（最简单的是标签的数量），来更新自己的标签。</p>
-</blockquote>
-<p>过程图解：<br></p>
-<p><img src="https://tva4.sinaimg.cn/large/007DFXDhgy1g5ay5kccn9j30lx04fgmj.jpg" alt></p>
-<p>过程不断的持续下去之后，所有可能聚集在一起的节点（相互影响力足够）被划分到了相同的社区（标签相同）</p>
-<p><strong>标签更新</strong></p>
-<ol>
-<li>同步更新</li>
-<li>异步更新</li>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><img src="https://ftp.bmp.ovh/imgs/2020/10/f7651c7699e8628e.webp" alt></p>
+<p>自己重装电脑或者更换电脑时候，需要将Hexo静态博客迁移到自己的新电脑中，此时需要在新环境下恢复博客。</p>
+<h2 id="必备条件"><a href="#必备条件" class="headerlink" title="必备条件"></a>必备条件</h2><ol>
+<li>将旧环境下的Blog数据打包，存放到新环境的目录下。</li>
+<li>未更改远程部署的博客（github和云服务器）</li>
 </ol>
+<h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><ol>
+<li><p>安装git：使用<code>git -version</code>确认是否安装成功</p>
+<p>配置git个人信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 如果第一次安装git</span><br><span class="line">git config --global user.name "your name"</span><br><span class="line">git config --global user.email "your email"</span><br></pre></td></tr></table></figure>
 
 
-<p>同步更新：<br></p>
-<p>​    对于第N次迭代中，对于X节点的标签，取决于（N-1）次的所有邻居节点的标签。</p>
-<p>​    数学表达式：<br></p>
-<p>​                <img src="https://tva3.sinaimg.cn/large/007DFXDhgy1g5ayfs7u0ij30ei01rglo.jpg" alt></p>
-<p>异步更新<br></p>
-<p>​    对于第N次更新，对于X 节点的标签，取决于第 N 次已经更新完的节点的标签，和 第N次还未更新节点的第（N-1）次迭代结束的标签</p>
-<p>​    数学表达式：<br></p>
-<p>​        <img src="https://tva3.sinaimg.cn/large/007DFXDhgy1g5aygo6am8j30iu01xdg2.jpg" alt></p>
-<p><strong>两种标签传播的区别</strong></p>
-<p>同步更新存在震荡问题，当对于一个近似二份网络的时候，标签会对这两个社区来回交换，达不到最终的平衡状态</p>
-<p>图片展示：<br></p>
-<p><img src="https://tva2.sinaimg.cn/large/007DFXDhgy1g5aykkzvsrj30iv05476u.jpg" alt></p>
-<h3 id="迭代终止条件"><a href="#迭代终止条件" class="headerlink" title="迭代终止条件"></a>迭代终止条件</h3><p>最理想状况：网络中的所有节点的标签不再改变，此时达到一个健壮的社区——社区内的节点不再变化。</p>
-<p>实际问题： 当某个节点的邻居节点的标签情况分布有多个相同的最大社区标签情况，过程会一直执行下去</p>
-<p><strong><em>解决方法</em></strong></p>
-<p>终止条件：对于每一个节点，它的标签是在它邻居中，标签值最大的</p>
-<p>公式表达：<br></p>
-<p><img src="https://tva2.sinaimg.cn/large/007DFXDhgy1g5ayss6u79j30de03zglh.jpg" alt></p>
-<hr>
-<h2 id="LPA-在mapreduce中的实现"><a href="#LPA-在mapreduce中的实现" class="headerlink" title="LPA 在mapreduce中的实现"></a>LPA 在mapreduce中的实现</h2><h3 id="初始化标签"><a href="#初始化标签" class="headerlink" title="初始化标签"></a>初始化标签</h3><blockquote>
-<p>赋予每个节点一个初始化的标签</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.xkz.examples.LPA;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.LongWritable;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.Text;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.mapreduce.Mapper;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * LPA 算法的初始化标签</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LPAInitMapper</span> <span class="keyword">extends</span> <span class="title">Mapper</span>&lt;<span class="title">LongWritable</span>, <span class="title">Text</span>,<span class="title">Text</span>,<span class="title">Text</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> lableNum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">map</span><span class="params">(LongWritable key, Text value, Context context)</span> <span class="keyword">throws</span> IOException,InterruptedException</span>&#123;</span><br><span class="line">        String[] strAll = value.toString().split(<span class="string">"\t"</span>);</span><br><span class="line">        String name = strAll[<span class="number">0</span>];</span><br><span class="line">        String[] strValue = strAll[<span class="number">1</span>].split(<span class="string">"#"</span>);</span><br><span class="line">        String PRValue = strValue[<span class="number">0</span>];</span><br><span class="line">        String list = strValue[<span class="number">1</span>];</span><br><span class="line">        lableNum++;</span><br><span class="line">        String valueOut = lableNum + <span class="string">"#"</span> + list;</span><br><span class="line">        context.write(<span class="keyword">new</span> Text(name + <span class="string">"#"</span> + PRValue),<span class="keyword">new</span> Text(valueOut));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><h4 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.xkz.examples.LPA;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.LongWritable;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.Text;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.mapreduce.Mapper;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LPAIterMapper</span> <span class="keyword">extends</span> <span class="title">Mapper</span>&lt;<span class="title">LongWritable</span>, <span class="title">Text</span>,<span class="title">Text</span>,<span class="title">Text</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">map</span><span class="params">(LongWritable key,Text value,Context context)</span> <span class="keyword">throws</span> IOException,InterruptedException</span>&#123;</span><br><span class="line">        <span class="comment">//切分成分</span></span><br><span class="line">        String[] strAll = value.toString().split(<span class="string">"\t"</span>);</span><br><span class="line">        String strHead = strAll[<span class="number">0</span>];</span><br><span class="line">        String strBody = strAll[<span class="number">1</span>];</span><br><span class="line">        String name = strHead.split(<span class="string">"#"</span>)[<span class="number">0</span>];</span><br><span class="line">        String PRValue = strHead.split(<span class="string">"#"</span>)[<span class="number">1</span>];</span><br><span class="line">        String lable = strBody.split(<span class="string">"#"</span>)[<span class="number">0</span>];</span><br><span class="line">        String outList = strBody.split(<span class="string">"#"</span>)[<span class="number">1</span>];</span><br><span class="line">        String[] nameLists = outList.split(<span class="string">";"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(String strTmp: nameLists)&#123;</span><br><span class="line">            String[] element = strTmp.split(<span class="string">":"</span>);</span><br><span class="line">            context.write(<span class="keyword">new</span> Text(element[<span class="number">0</span>]),<span class="keyword">new</span> Text(lable + <span class="string">"#"</span> + name));</span><br><span class="line">        &#125;</span><br><span class="line">        outList = <span class="string">"#"</span> + outList;</span><br><span class="line">        context.write(<span class="keyword">new</span> Text(name),<span class="keyword">new</span> Text(outList));</span><br><span class="line">        context.write(<span class="keyword">new</span> Text(name),<span class="keyword">new</span> Text(<span class="string">"$"</span> + lable));</span><br><span class="line">        context.write(<span class="keyword">new</span> Text(name),<span class="keyword">new</span> Text(<span class="string">"@"</span> + PRValue));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>安装node.js：<code>node -v</code>检查安装</p>
+<p>下载网址：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a></p>
+</li>
+<li><p>用国内淘宝的cnpm代替npm：<code>npm install -g cnpm --registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></code></p>
+<p>替换原因：在国内直接使用npm下载，速度很慢。</p>
+<p>检查安装：<code>cnpm -v</code></p>
+</li>
+<li><p>生成SSH密钥：<code>ssh-keygen -t rsa -C “你的GitHub注册邮件地址”</code></p>
+<p>测试：<code>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></code></p>
+<p>生成SSH密钥后，会存放在<code>~/ssh/</code>下。</p>
+</li>
+<li><p>解压Blog数据包，删除无用信息</p>
+<p>只需保留_config.yml，theme/，source/，scaffolds/，package.json，.gitignore 这些项目，删除其他的文件</p>
+</li>
+<li><p>安装Hexo：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 全局安装Hexo</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line"><span class="meta">#</span> hexo验证</span><br><span class="line">hexo -v</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装其它插件</span><br><span class="line"><span class="meta">#</span> 安装hexo -server插件</span><br><span class="line">cnpm install hexo-server --save</span><br><span class="line"><span class="meta">#</span> 安装部署git的插件</span><br><span class="line">cnpm install hexo-deployer-git --save</span><br><span class="line"><span class="meta">#</span> 安装RSS订阅插件</span><br><span class="line">cnpm install hexo-generator-feed --save</span><br><span class="line"><span class="meta">#</span> 安装站点地图插件</span><br><span class="line">cnpm install hexogenerator-sitemap --save</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装关联插件</span><br><span class="line">cnpm install</span><br></pre></td></tr></table></figure>
 
-<h4 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.xkz.examples.LPA;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.Text;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.mapreduce.Reducer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 进行统计和更改标签</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LPAIterReducer</span> <span class="keyword">extends</span> <span class="title">Reducer</span>&lt;<span class="title">Text</span>,<span class="title">Text</span>,<span class="title">Text</span>,<span class="title">Text</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">//存储名字与lable的对应关系</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> HashMap&lt;String,String&gt; name_lable = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Double changeCount = <span class="number">0.0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Double changeRate = <span class="number">0.0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Integer lableCount = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">reduce</span><span class="params">(Text key,Iterable&lt;Text&gt; value,Context context)</span> <span class="keyword">throws</span> IOException,InterruptedException</span>&#123;</span><br><span class="line">        <span class="comment">//接收map函数产生的四类K——V对</span></span><br><span class="line">        lableCount ++;</span><br><span class="line"></span><br><span class="line">        String list = <span class="keyword">null</span> , preLable = <span class="keyword">null</span> ,keyPR =<span class="keyword">null</span>;</span><br><span class="line">        ArrayList&lt;String&gt; lableLists  = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">for</span>(Text element: value)&#123;</span><br><span class="line">            String strElement = element.toString();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(strElement.charAt(<span class="number">0</span>) == <span class="string">'#'</span> &amp;&amp; strElement.length() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                list = <span class="keyword">new</span> String(strElement);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(strElement.charAt(<span class="number">0</span>) == <span class="string">'$'</span>&amp;&amp; strElement.length() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                preLable = strElement.replace(<span class="string">"$"</span>,<span class="string">""</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(strElement.charAt(<span class="number">0</span>) == <span class="string">'@'</span> &amp;&amp; strElement.length() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                keyPR = strElement.replace(<span class="string">"@"</span> , <span class="string">""</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(strElement.length() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                lableLists.add(strElement);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(list != <span class="keyword">null</span>)&#123;</span><br><span class="line">            String subList = list.replace(<span class="string">"#"</span>,<span class="string">""</span>);</span><br><span class="line">            String[] strSplits = subList.split(<span class="string">";"</span>);</span><br><span class="line">            <span class="comment">//wMap 是受到当前节点——key，影响的节点集合</span></span><br><span class="line">            HashMap&lt;String,Double&gt; wMap = <span class="keyword">new</span> HashMap&lt;String, Double&gt;();</span><br><span class="line">            <span class="keyword">for</span>(String strTmp: strSplits)&#123;</span><br><span class="line">                String[] strElements = strTmp.split(<span class="string">":"</span>);</span><br><span class="line">                wMap.put(strElements[<span class="number">0</span>],Double.valueOf(strElements[<span class="number">1</span>]));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//lableMap是影响当前节点的 标签 和 关联度 （入边权值）的一个map</span></span><br><span class="line">            HashMap&lt;String,Double&gt; lableMap = <span class="keyword">new</span> HashMap&lt;String, Double&gt;();</span><br><span class="line">            <span class="keyword">for</span>(String strTmp: lableLists)&#123;</span><br><span class="line">                String[] strElements = strTmp.split(<span class="string">"#"</span>);</span><br><span class="line">                String lable = strElements[<span class="number">0</span>],name = strElements[<span class="number">1</span>];</span><br><span class="line">                <span class="comment">//实现异步更新</span></span><br><span class="line">                <span class="keyword">if</span>(name_lable.containsKey(name))&#123;</span><br><span class="line">                    lable = name_lable.get(name);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//感觉这一步有点多余，因为不可能出现单方面的影响</span></span><br><span class="line">                <span class="keyword">if</span>( !wMap.containsKey(name))&#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                Double weight = wMap.get(name);</span><br><span class="line">                <span class="comment">//受到当前节点影响，更新lable的权值</span></span><br><span class="line">                <span class="keyword">if</span>(!lableMap.containsKey(lable))&#123;</span><br><span class="line">                    lableMap.put(lable,weight);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    lableMap.put(lable,lableMap.get(lable) + weight);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            ArrayList&lt;String&gt; maxList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">            Double maxWeight = <span class="number">0.0</span>;</span><br><span class="line">            <span class="comment">//这种适合数量大的遍历</span></span><br><span class="line">            <span class="keyword">for</span>(Map.Entry&lt;String,Double&gt; entry : lableMap.entrySet())&#123;</span><br><span class="line">                <span class="keyword">if</span>(entry.getValue() &gt; maxWeight)&#123;</span><br><span class="line">                    maxList.clear();</span><br><span class="line">                    maxList.add(entry.getKey());</span><br><span class="line">                    maxWeight = entry.getValue();</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(entry.getValue() == maxWeight)&#123;</span><br><span class="line">                    maxList.add(entry.getKey());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//得到最大权值的lable</span></span><br><span class="line">            <span class="keyword">int</span> index = <span class="keyword">new</span> Random().nextInt(maxList.size());</span><br><span class="line">            String newLable = maxList.get(index);</span><br><span class="line">            <span class="keyword">if</span>(!newLable.equals(preLable))&#123;</span><br><span class="line">                changeCount ++;</span><br><span class="line">            &#125;</span><br><span class="line">            String outList = maxList.get(index) + list;</span><br><span class="line">            context.write(<span class="keyword">new</span> Text(key.toString() + <span class="string">"#"</span> + keyPR),<span class="keyword">new</span> Text(outList));</span><br><span class="line">            <span class="comment">//为了实现异步更新</span></span><br><span class="line">            name_lable.put(key.toString(),newLable);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">cleanup</span><span class="params">(Context context)</span></span>&#123;</span><br><span class="line">        name_lable.clear();</span><br><span class="line">        changeRate = changeCount / lableCount;</span><br><span class="line">        System.out.print(<span class="string">"-----------------------the changeRate"</span>+ changeRate +<span class="string">"-----------------------"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>注：代码属于做项目的一部分，想要详细代码和解析的可以到我的github上下载，过段时间应该会发布到github上</p>
-<p>参考：</p>
-<blockquote>
-<p><a href="https://cloud.tencent.com/developer/article/1066376" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1066376</a></p>
-<p><a href="http://www.go60.top/view/89.html" target="_blank" rel="noopener">http://www.go60.top/view/89.html</a></p>
+
+</li>
+</ol>
+<h2 id="服务器部署"><a href="#服务器部署" class="headerlink" title="服务器部署"></a>服务器部署</h2><ol>
+<li><p>github：需要在giuhub上增添上自己的SSH公钥。</p>
+<p>位置：我的 - setting - SSH and GPG keys</p>
+<p>添加：将自己本地.ssh目录下的id_rsa.pub内容复制到github</p>
+<p><a href="https://imgchr.com/i/0JoonK" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/05/0JoonK.png" alt="0JoonK.png"></a></p>
+</li>
+<li><p>云服务器：替换原来的git用户密钥。</p>
+<p>位置：~/.ssh/</p>
+<p>替换：将原先的authorized_keys内容替换成自己生成的公钥</p>
+</li>
+</ol>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ol>
+<li><p>问题描述：使用hexo s 时候报错：Template render error:(unknown path)</p>
+<p>原因1：可能是source/_post下没有渲染的文章</p>
+<p>原因2：可能子啊hexo 3.0后hexo server需要自行安装</p>
+<p>方法1：用hexo n “new article” 创建新的文章，再hexo g之后使用hexo s。</p>
+<p>方法2：安装插件</p>
+<ul>
+<li>检查是否安装插件：<code>cnpm list hexo-generator-feed</code></li>
+<li>安装插件：<code>cnpm install hexo-generator-feed --save</code></li>
+<li>可能存在其它关联插件：<code>cnpm install</code></li>
+</ul>
+</li>
+<li><p>问题描述：Hexo Cannot find module</p>
+<p>方法：hexo的安装出现问题，使用命令<code>cnpm install hexo --no-optional</code></p>
+</li>
+</ol>
+<h2 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h2><blockquote>
+<p><a href="https://ink-bottle.github.io/2019/05/09/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">https://ink-bottle.github.io/2019/05/09/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/</a></p>
+<p><a href="https://blog.csdn.net/baidu_34310405/article/details/105296356" target="_blank" rel="noopener">https://blog.csdn.net/baidu_34310405/article/details/105296356</a></p>
+<p><a href="https://segmentfault.com/a/1190000012907499" target="_blank" rel="noopener">https://segmentfault.com/a/1190000012907499</a></p>
+<p><a href="https://www.jianshu.com/p/196773379a78" target="_blank" rel="noopener">https://www.jianshu.com/p/196773379a78</a></p>
+<p><a href="http://www.west999.com/info/html/wangluobiancheng/Phpbiancheng/20180724/4379814.html" target="_blank" rel="noopener">http://www.west999.com/info/html/wangluobiancheng/Phpbiancheng/20180724/4379814.html</a></p>
+<p><a href="https://segmentfault.com/a/1190000009363890" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009363890</a></p>
+<p><a href="https://segmentfault.com/a/1190000010680022" target="_blank" rel="noopener">https://segmentfault.com/a/1190000010680022</a></p>
 </blockquote>
 
       
@@ -305,7 +315,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LPA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
@@ -317,7 +327,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/algorithm//" class="article-tag-list-link color5">algorithm</a>
+        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
@@ -372,7 +382,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://www.arkxkz.com/2019/07/24/LPA算法和实现/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://www.arkxkz.com/2020/10/05/Hexo博客迁移/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -386,18 +396,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/25/正向代理与反向代理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          正向代理与反向代理
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/23/pagerank算法及mapreduce中应用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">pagerank算法及mapreduce中应用</div>
+    <a href="/2020/06/16/文件加密的概念和运用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">文件加密的概念和运用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -424,7 +425,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Label-Propagation-算法"><span class="toc-number">1.</span> <span class="toc-text">Label Propagation 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LPA原理"><span class="toc-number">1.2.</span> <span class="toc-text">LPA原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代终止条件"><span class="toc-number">1.3.</span> <span class="toc-text">迭代终止条件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LPA-在mapreduce中的实现"><span class="toc-number">2.</span> <span class="toc-text">LPA 在mapreduce中的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化标签"><span class="toc-number">2.1.</span> <span class="toc-text">初始化标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代"><span class="toc-number">2.2.</span> <span class="toc-text">迭代</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#map"><span class="toc-number">2.2.1.</span> <span class="toc-text">map()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reduce"><span class="toc-number">2.2.2.</span> <span class="toc-text">reduce</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#必备条件"><span class="toc-number">2.</span> <span class="toc-text">必备条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地部署"><span class="toc-number">3.</span> <span class="toc-text">本地部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器部署"><span class="toc-number">4.</span> <span class="toc-text">服务器部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解决"><span class="toc-number">5.</span> <span class="toc-text">问题解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章："><span class="toc-number">6.</span> <span class="toc-text">参考文章：</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -458,7 +459,7 @@ if(true){
   	repo: 'ark-xkz.github.io',
   	owner: 'Ark-xkz',
   	admin: ['Ark-xkz'],
-  	id: 'Wed Jul 24 2019 15:52:33 GMT+0800',
+  	id: 'Mon Oct 05 2020 10:28:02 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
@@ -472,7 +473,7 @@ gitalk.render('gitalk-container')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css"/>
 <script>
 var gitment = new Gitment({
-  id: "https://www.arkxkz.com/2019/07/24/LPA算法和实现/",
+  id: "https://www.arkxkz.com/2020/10/05/Hexo博客迁移/",
   owner: 'Ark-xkz',
   repo: 'ark-xkz.github.io',
   oauth: {
